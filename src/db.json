@@ -2,19 +2,30 @@
   "mangacollection": [
     {
       "id": "1",
+      "reading": 1,
       "title": "Bleach",
       "author": "Tite Kubo",
       "volumes": "74/74",
-      "Status": "Completa",
-      "Raiting": 5
+      "status": "Completa",
+      "rating": 5
     },
     {
       "id": "2",
+      "reading": 2,
       "title": "Oshi No Ko",
       "author": "Aka Akasaka",
       "volumes": "12/13",
-      "Status": "In corso",
-      "Raiting": 4
+      "status": "In corso",
+      "rating": 3
+    },
+    {
+      "id": "3",
+      "reading": 3,
+      "title": "Buonanotte, Punpun",
+      "author": "Inio Asano",
+      "volumes": "12/12",
+      "status": "Completa",
+      "rating": 2
     }
   ],
   "products": [
