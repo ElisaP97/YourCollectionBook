@@ -1,0 +1,46 @@
+{
+  "mangacollection": [
+    {
+      "id": "1",
+      "title": "Bleach",
+      "author": "Tite Kubo",
+      "volumes": "74/74",
+      "Status": "Completa",
+      "Raiting": 5
+    },
+    {
+      "id": "2",
+      "title": "Oshi No Ko",
+      "author": "Aka Akasaka",
+      "volumes": "12/13",
+      "Status": "In corso",
+      "Raiting": 4
+    }
+  ],
+  "products": [
+    {
+      "id": "2",
+      "name": "DaiDark 7",
+      "price": 7.99,
+      "completed": false
+    },
+    {
+      "id": "3",
+      "name": "Soul Eater 11",
+      "price": 10.99,
+      "completed": false
+    },
+    {
+      "id": "4",
+      "name": "Berserk 7",
+      "price": 50,
+      "completed": false
+    },
+    {
+      "id": "f498",
+      "name": "Oshi no ko 13",
+      "price": 6.99,
+      "completed": false
+    }
+  ]
+}
