@@ -25,7 +25,7 @@
       "author": "Inio Asano",
       "volumes": "12/12",
       "status": "Completa",
-      "rating": 2
+      "rating": 0
     }
   ],
   "products": [
@@ -33,7 +33,7 @@
       "id": "a702",
       "name": "Dai Dark 7",
       "price": 7.5,
-      "completed": false
+      "completed": true
     },
     {
       "id": "43a9",

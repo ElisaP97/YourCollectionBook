@@ -22,8 +22,11 @@ Per la memorizzazione dei dati è stato utilizzato un tool "json-server"
 - [Daisy UI](https://daisyui.com/)
 - [axios js](https://axios-http.com/docs/intro)
 - [json-server](https://github.com/typicode/json-server/tree/v0)
+- [Heroicons](https://heroicons.com/solid)
+- [Fontawesome](https://fontawesome.com/)
 
-#Licenza
+# Licenza:
+
 MIT License
 
 Copyright (c) [2024] [Poggi Elisa]
