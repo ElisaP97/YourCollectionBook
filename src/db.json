@@ -19,27 +19,51 @@
   ],
   "products": [
     {
-      "id": "2",
-      "name": "DaiDark 7",
-      "price": 7.99,
+      "id": "a702",
+      "name": "Dai Dark 7",
+      "price": 7.5,
       "completed": false
     },
     {
-      "id": "3",
+      "id": "43a9",
       "name": "Soul Eater 11",
-      "price": 10.99,
+      "price": 13,
       "completed": false
     },
     {
-      "id": "4",
-      "name": "Berserk 7",
+      "id": "f7dd",
+      "name": "Berserk Deluxe Edition 7",
       "price": 50,
       "completed": false
     },
     {
-      "id": "f498",
+      "id": "78aa",
+      "name": "One piece 107",
+      "price": 5.2,
+      "completed": false
+    },
+    {
+      "id": "7ede",
       "name": "Oshi no ko 13",
-      "price": 6.99,
+      "price": 6.5,
+      "completed": false
+    },
+    {
+      "id": "37d5",
+      "name": "Dragon Ball Super 22",
+      "price": 5.5,
+      "completed": false
+    },
+    {
+      "id": "8ead",
+      "name": "Pandora Hearts 2",
+      "price": 13,
+      "completed": false
+    },
+    {
+      "id": "8fb8",
+      "name": "Maydare 2",
+      "price": 7,
       "completed": false
     }
   ]

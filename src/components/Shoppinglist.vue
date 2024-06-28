@@ -144,18 +144,17 @@
                             </div>
                         </div>
                         <!-- Prezzo totale che spendo -->
-                        <div class="col-span-3">
+                        <div class="col-span-3 text-center">
                             <p class="text-lg">Totale Prezzo da spendere: {{ TotPrice }} € </p>
                             <p class="text-lg">Totale Speso: {{ PriceTotCompletedProducts }} € </p>
-
                         </div>
-                        <!-- da inserire in libreria -->
-                        <div class="row-span-6 col-span-2 border text-center p-2">
+                        <!-- da inserire in libreria 
+                        <div class="row-span-6 col-span-2 border text-center p-2 overflow-x-auto h-full">
                             <h2 class="text-xl">Da aggiungere in collezione</h2>
                             <div class="mt-2" v-for="product in completedProducts" :key="product.id">
                                 <p class="text-center">{{product.name}}</p>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
