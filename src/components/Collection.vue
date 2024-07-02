@@ -11,6 +11,7 @@
 
     const urlCollection= "http://localhost:3000/mangacollection";
     const books = ref([]);
+    const addBooks = ref(1);
 
     onMounted(()=> {
         axios.get(urlCollection).then(resp=>{
@@ -56,40 +57,100 @@
         <!-- div contenitore barra di ricerca e lista -->
         <div class="bg-primary-content h-full w-full bg-opacity-80 flex flex-wrap justify-center content-start gap-1 lg:gap-5 ">
             <div class="w-full md:w-4/5 mt-5 flex flex-wrap gap-3 justify-evenly">
-                <button @click="showAll()" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">Tutta la collezione</button>
-                <button @click="showNotRead()" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
+                <button @click="showAll(), addBooks=1" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">Tutta la collezione</button>
+                <button @click="showNotRead(), addBooks=1" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
                     Da leggere
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
                     </svg>
                 </button>
-                <button @click="showReading()" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
+                <button @click="showReading(), addBooks=1" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
                     Lettura in corso
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                     </svg>
                 </button>
-                <button @click="showCompletedRead()" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
+                <button @click="showCompletedRead(),addBooks=1" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
                     Compleatati 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
                     </svg>
                 </button>
-                <button class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
+                <button @click="addBooks=2" class="btn btn-xs lg:btn-md  btn-outline btn-secondary bg-secondary-content ">
                     Aggiungi Serie
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                 </button>
             </div>
-            <div class="bg-secondary-content border border-secondary border-4 w-4/5 h-3/5 2xl:h-3/4 mt-5 p-5">
+
+            <div v-if="addBooks===2" class="bg-secondary-content border border-secondary border-4 w-4/5 h-3/4 2xl:h-3/4 mt-5 p-5 grid gap-5 grid-cols-3 grid-rows-4 items-center">
+                <!--Prima riga-->
+                <input type="text" placeholder="Titolo" class="input input-xs lg:input-md input-bordered input-secondary w-full max-w-xs row-start-1"/>
+                <input type="text" placeholder="Autore" class="input input-xs lg:input-md input-bordered input-secondary w-full max-w-xs row-start-1" />
+                <!--Seconda riga-->
+                <label class="form-control w-full max-w-xsol-span-1 row-start-2">
+                <div class="label">
+                    <span class="label-text text-xs lg:text-lg">Volumi in possesso</span>
+                </div>
+                <input type="number" min="1" class="input input-xs lg:input-md input-bordered w-full max-w-xs" />
+                </label>
+                <label class="form-control w-full max-w-xsol-span-1 row-start-2">
+                <div class="label">
+                    <span class="label-text text-xs lg:text-lg">Volumi in totale</span>
+                </div>
+                <input type="number" min="1" class="input input-xs lg:input-md input-bordered w-full max-w-xs" />
+                </label>
+                <label class="form-control w-full max-w-xsol-span-1 row-start-2">
+                <div class="label">
+                    <span class="label-text text-xs lg:text-lg">Status Opera</span>
+                </div>
+                <select class="select select-xs lg:select-md select-secondary w-full max-w-xs col-span-1 row-start-2">
+                    <option class="text-xs lg:text-lg">Completa</option>
+                    <option class="text-xs lg:text-lg">In Corso</option>
+                    <option class="text-xs lg:text-lg">Droppata</option>
+                </select>
+                </label>
+                <!--Terza riga riga-->
+                <label class="form-control w-full max-w-xsol-span-1 row-start-3 mt-1">
+                <div class="label">
+                    <span class="label-text text-xs lg:text-lg">Stato lettura</span>
+                </div>
+                <select class="select select-xs lg:select-md select-secondary w-full max-w-xs col-span-1 row-start-3">
+                    <option>Completa</option>
+                    <option>In Corso</option>
+                    <option>Non iniziata</option>
+                </select>
+                </label>
+                <label class="form-control w-full max-w-xsol-span-1 row-start-3">
+                <div class="label">
+                    <span class="label-text text-xs lg:text-lg">Raiting</span>
+                </div>
+                <div class="rating col-span-2 row-start-3">
+                    <input type="radio" name="rating-1" class="mask mask-heart ms-1 bg-secondary" />
+                    <input type="radio" name="rating-1" class="mask mask-heart ms-1 bg-secondary" />
+                    <input type="radio" name="rating-1" class="mask mask-heart ms-1 bg-secondary" />
+                    <input type="radio" name="rating-1" class="mask mask-heart ms-1 bg-secondary" />
+                    <input type="radio" name="rating-1" class="mask mask-heart ms-1 bg-secondary" />
+                </div>
+                </label>
+                <!--Quarta riga-->
+                <button class="btn btn-xs lg:btn-md btn-secondary mt-5 col-span-3 row-start-4">
+                    Aggiungi Prodotto
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <div v-if="addBooks===1" class="bg-secondary-content border border-secondary border-4 w-4/5 h-3/4 2xl:h-3/4 mt-5 p-5">
                 <div class="overflow-auto h-full">
                     <table class="table">
                         <!-- head -->
                         <thead class="table-fixed">
                             <tr>
                                 <th>Stato lettura</th>
-                                <th>Nome e autore</th>
+                                <th>Titolo e autore</th>
                                 <th>Numero volumi</th>
                                 <th>Status</th>
                                 <th>Raiting</th>
@@ -159,9 +220,7 @@
     </div>
 </div>
 </template>
+
 <style scoped>
-@import '@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '@fortawesome/fontawesome-free/css/regular.css';
-@import '@fortawesome/fontawesome-free/css/solid.css';
-@import '@fortawesome/fontawesome-free/css/brands.css';
+
 </style>

@@ -91,7 +91,7 @@
         <div class="bg-accent-content h-3/4 sm:4/5 md:w-4/5" style="background-image: url(../../public/manga2.jpg)">
             <!-- div contenitore barra di ricerca e lista -->
             <div class="bg-primary-content h-full w-full bg-opacity-80 flex justify-center flex-wrap content-start gap-2">                
-                <button @click="add=2" v-if="add===1" class="btn btn-xs lg:btn-lg lg:m-4 btn-outline btn-accent bg-secondary-content mt-5 ">
+                <button @click="add=2" v-if="add===1" class="btn btn-xs lg:btn-lg lg:m-4 btn-outline btn-accent bg-accent-content mt-5 ">
                     Aggiungi Prodotto
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
