@@ -83,7 +83,7 @@
                 </button>
             </div>
             <div class="bg-secondary-content border border-secondary border-4 w-4/5 h-3/5 2xl:h-3/4 mt-5 p-5">
-                <div class="overflow-x-auto h-full">
+                <div class="overflow-auto h-full">
                     <table class="table">
                         <!-- head -->
                         <thead class="table-fixed">

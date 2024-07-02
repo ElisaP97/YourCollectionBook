@@ -7,6 +7,7 @@
     import { ref } from 'vue';
     import { computed } from 'vue';
 
+
     //logica
 
     const add= ref(1);
@@ -89,15 +90,15 @@
         <!-- div contenitore con immagine manga -->
         <div class="bg-accent-content h-3/4 sm:4/5 md:w-4/5" style="background-image: url(../../public/manga2.jpg)">
             <!-- div contenitore barra di ricerca e lista -->
-            <div class="bg-primary-content h-full w-full bg-opacity-80 flex flex-wrap justify-center content-start gap-2">                
-                <button @click="add=2" v-if="add===1" class="btn btn-xs lg:btn-lg  btn-outline btn-accent bg-secondary-content mt-5 ">
+            <div class="bg-primary-content h-full w-full bg-opacity-80 flex justify-center flex-wrap content-start gap-2">                
+                <button @click="add=2" v-if="add===1" class="btn btn-xs lg:btn-lg lg:m-4 btn-outline btn-accent bg-secondary-content mt-5 ">
                     Aggiungi Prodotto
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
                     </svg>
                 </button>
-                <div v-if="add===2" class="border border-accent rounded-lg bg-accent-content p-2 mt-5 flex justify-center align-center gap-2" >
-                        <label class="input input-bordered input-accent text-accent flex items-center gap-2">
+                <div v-if="add===2" class="border border-accent rounded-lg bg-accent-content p-2 mt-5 flex flex-wrap justify-center align-center gap-2" >
+                        <label class="input input-bordered input-accent text-accent flex items-center gap-2 ">
                             Nome
                             <input  v-model.trim="nameproduct" type="text" class="grow" placeholder="Inserisci il titolo" />
                         </label>
@@ -105,16 +106,16 @@
                             Prezzo
                             <input v-model.number="priceproduct" type="text" class="grow" placeholder="Inserisci il prezzo" />
                         </label>
-                        <button @click="addProduct()" class="text-accent"> <!--keyup evento del Dom quando rilascio il bottone specificato-->
+                        <button @click="addProduct()" class="text-accent border border-1 border-accent rounded my-2 px-4 md:p-0 md:my-0 md:border-none "> <!--keyup evento del Dom quando rilascio il bottone specificato-->
                             Enter
                         </button>
                 </div>
-                <div class="bg-accent-content border border-accent border-4 w-4/5 h-3/4 mt-5 p-5">
-                    <h1 class="text-center text-5xl mb-2">Shopping List</h1>
+                <div class="bg-accent-content border border-accent border-4 w-4/5 h-3/4 p-3 overflow-auto">
+                    <h1 class="text-center text-2xl sm:text-4xl sm:text-5xl mb-2">Shopping List</h1>
                     <div class="grid grid-rows-6 grid-flow-col gap-4 mt-5 pb-3 h-3/4">
                         <!-- Lista nuove uscite -->
-                        <div class="row-span-5 col-span-3 ">
-                            <div class="overflow-x-auto h-full">
+                        <div class="row-span-5 col-span-3 overflow-auto ">
+                            <div class="h-full">
                                     <table class="table">
                                         <!-- head -->
                                         <thead>
@@ -125,11 +126,11 @@
                                                 <th>Check</th>
                                             </tr>
                                         </thead>
-                                        <tbody v-for="product in products" :key="product.id"> <!-- ciclo tutti gli elementi del json distinguendoli con l'id attraverso l'attributo key-->
+                                        <tbody v-for="product in products" :key="product.id" class="divide-y"> <!-- ciclo tutti gli elementi del json distinguendoli con l'id attraverso l'attributo key-->
                                         <!-- singolo prodotto -->
                                         <tr>
                                             <th>
-                                                <button @click="deleteProduct(product.id)" class="btn btn-sm btn-circle border-0 btn-outline btn-accent bg-secondary-content" >
+                                                <button @click="deleteProduct(product.id)" class="btn btn-xs sm:btn-sm btn-circle border-0 btn-outline btn-accent bg-secondary-content" >
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                                                     </svg>
@@ -144,9 +145,9 @@
                             </div>
                         </div>
                         <!-- Prezzo totale che spendo -->
-                        <div class="col-span-3 text-center">
-                            <p class="text-lg">Totale Prezzo da spendere: {{ TotPrice }} € </p>
-                            <p class="text-lg">Totale Speso: {{ PriceTotCompletedProducts }} € </p>
+                        <div class="col-span-3 mt-3 text-center">
+                            <p class="text-xs sm:text-sm md:text-lg">Totale Prezzo da spendere: {{ TotPrice }} € </p>
+                            <p class="text-xs sm:text-sm md:text-lg">Totale Speso: {{ PriceTotCompletedProducts }} € </p>
                         </div>
                         <!-- da inserire in libreria 
                         <div class="row-span-6 col-span-2 border text-center p-2 overflow-x-auto h-full">

@@ -15,10 +15,10 @@ const Go = ref(1);
         <div class="hero-content text-center">
             <div class="max-w-md">
                 <h1 class="text-5xl font-bold">Benvenuto nella tua libreria</h1>
-                <p class="py-6">
+                <p class="text-2xl py-6">
                     Qui puoi tener traccia della tua collezione, dei fumetti che hai letto e non, di quelli in corso e di quelli completi, oltre alla possibilità di tenere una lista delle uscite ancora da comprare.
                 </p>
-                <button @click="Go=2,tab=2" class="btn btn-primary">Lesgoski</button>
+                    <button @click="Go=2,tab=2" class="btn btn-primary">Lesgoski</button>
             </div>
         </div>
     </div>
@@ -28,4 +28,5 @@ const Go = ref(1);
 
 
 <style scoped>
+
 </style>
