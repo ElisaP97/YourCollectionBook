@@ -10,22 +10,76 @@
       "rating": 5
     },
     {
-      "id": "2",
-      "reading": 2,
-      "title": "Oshi No Ko",
-      "author": "Aka Akasaka",
-      "volumes": "12/13",
-      "status": "In corso",
-      "rating": 3
-    },
-    {
       "id": "3",
       "reading": 3,
       "title": "Buonanotte, Punpun",
       "author": "Inio Asano",
       "volumes": "12/12",
       "status": "Completa",
-      "rating": 0
+      "rating": 1
+    },
+    {
+      "id": "5441",
+      "reading": 1,
+      "title": "The Ancient Magus' Bride",
+      "author": "Kore Yamazaki",
+      "volumes": "19/19",
+      "status": "In Corso",
+      "rating": 5
+    },
+    {
+      "id": "4a81",
+      "reading": 2,
+      "title": "DanDaDan",
+      "author": "Yukinobu Tatsu",
+      "volumes": "12/12",
+      "status": "In Corso",
+      "rating": 4
+    },
+    {
+      "id": "42f8",
+      "reading": 1,
+      "title": "Gannibal",
+      "author": "Masaaki Ninomiya",
+      "volumes": "13/13",
+      "status": "Completa",
+      "rating": 4
+    },
+    {
+      "id": "afd0",
+      "reading": 1,
+      "title": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "volumes": "62/62",
+      "status": "Completa",
+      "rating": 5
+    },
+    {
+      "id": "fa79",
+      "reading": 1,
+      "title": "Crazy Zoo",
+      "author": "Kōhei Horikoshi",
+      "volumes": "5/5",
+      "status": "Completa",
+      "rating": 4
+    },
+    {
+      "id": "dc1b",
+      "reading": 3,
+      "title": "One Piece",
+      "author": "Eiichirō Oda",
+      "volumes": "106/107",
+      "status": "In Corso",
+      "rating": 1
+    },
+    {
+      "id": "60f0",
+      "reading": 2,
+      "title": "Oshi no Ko",
+      "author": "Aka Akasaka",
+      "volumes": "12/13",
+      "status": "In Corso",
+      "rating": 4
     }
   ],
   "products": [
